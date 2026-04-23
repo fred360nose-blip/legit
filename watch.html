@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Watch</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>legit streaming sight</h1>
+
+<div class="layout">
+
+  <!-- LEFT: SHOW SELECT -->
+  <div class="panel">
+    <h2>Shows</h2>
+
+    <button onclick="selectShow('snowfall')">Snowfall</button>
+    <button onclick="selectShow('breakingbad')">Breaking Bad</button>
+
+    <h3>Season</h3>
+    <div id="seasons"></div>
+
+    <h3>Episodes</h3>
+    <div id="episodes"></div>
+  </div>
+
+  <!-- RIGHT: PLAYER -->
+  <div class="player">
+    <iframe id="player"
+      src=""
+      frameborder="0"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+</div>
+
+<script>
+const shows = {
+  snowfall: {
+    id: 71694,
+    seasons: 3,
+    episodesPerSeason: 10
+  },
+  breakingbad: {
+    id: 1396,
+    seasons: 5,
+    episodesPerSeason: [7, 13, 13, 13, 16]
+  }
+};
+
+let currentShow = null;
+let currentSeason = 1;
+
+function selectShow(name) {
+  currentShow = shows[name];
+  currentSeason = 1;
+
+  renderSeasons();
+  renderEpisodes();
+  loadEpisode(1);
+}
+
+function renderSeasons() {
+  const container = document.getElementById("seasons");
+  container.innerHTML = "";
+
+  for (let i = 1; i <= currentShow.seasons; i++) {
+    const btn = document.createElement("button");
+    btn.innerText = "Season " + i;
+    btn.onclick = () => {
+      currentSeason = i;
+      renderEpisodes();
+    };
+    container.appendChild(btn);
+  }
+}
+
+function renderEpisodes() {
+  const container = document.getElementById("episodes");
+  container.innerHTML = "";
+
+  let epCount = Array.isArray(currentShow.episodesPerSeason)
+    ? currentShow.episodesPerSeason[currentSeason - 1]
+    : currentShow.episodesPerSeason;
+
+  for (let i = 1; i <= epCount; i++) {
+    const btn = document.createElement("button");
+    btn.innerText = "Ep " + i;
+    btn.onclick = () => loadEpisode(i);
+    container.appendChild(btn);
+  }
+}
+
+function loadEpisode(ep) {
+  const player = document.getElementById("player");
+
+  
+  const baseURL = "https://player.videasy.net/tv/{show}/{season}/{episode}";
+
+  player.src = baseURL
+    .replace("{show}", currentShow.id)
+    .replace("{season}", currentSeason)
+    .replace("{episode}", ep);
+}
+</script>
+
+</body>
+</html>
