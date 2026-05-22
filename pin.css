@@ -1,29 +1,30 @@
 * {
   box-sizing: border-box;
 }
+
 html, body {
   width: 100%;
-  min-height: 100%;
-  overflow-x: hidden;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  overscroll-behavior: none;
   touch-action: manipulation;
   -webkit-text-size-adjust: 100%;
-}
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
   background: white;
-  color: #842983;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .pin-page {
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
 }
 
 .top-section {
-  height: 76vh;
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -76,10 +77,11 @@ h1 {
 }
 
 .keypad {
-  height: 24vh;
+  height: 320px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   background: #fffbff;
+  flex-shrink: 0;
 }
 
 .keypad button {
@@ -99,10 +101,6 @@ h1 {
 }
 
 @media (max-width: 430px) {
-  .top-section {
-    height: 70vh;
-  }
-
   h1 {
     font-size: 24px;
     margin-bottom: 70px;
@@ -114,7 +112,7 @@ h1 {
   }
 
   .keypad {
-    height: 30vh;
+    height: 300px;
   }
 
   .keypad button {
