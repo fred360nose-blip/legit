@@ -12,7 +12,7 @@ function login() {
   }
 
   localStorage.setItem("profileId", account.profileId);
-  window.location.href = "pin.html";
+  window.location.href = "/pin";
 }
 
 function checkPin() {
