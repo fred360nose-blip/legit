@@ -1,0 +1,87 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.screen, .phone {
+  width: 360px;
+  text-align: center;
+}
+
+input {
+  width: 100%;
+  padding: 14px;
+  margin: 8px 0;
+  border-radius: 12px;
+  border: none;
+  font-size: 16px;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 12px;
+  border-radius: 12px;
+  border: none;
+  background: #2f80ed;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.card {
+  position: relative;
+  background: linear-gradient(135deg, #222, #333);
+  border-radius: 24px;
+  padding: 24px;
+  text-align: left;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  overflow: hidden;
+}
+
+.watermark {
+  position: absolute;
+  top: 45%;
+  left: -20px;
+  transform: rotate(-25deg);
+  font-size: 44px;
+  opacity: 0.12;
+  font-weight: bold;
+}
+
+.notvalid, .warning {
+  color: #ff4d4d;
+  font-weight: bold;
+}
+
+.photo {
+  width: 90px;
+  height: 110px;
+  background: #777;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 18px 0;
+  font-size: 13px;
+}
+
+.qr {
+  margin-top: 20px;
+  background: white;
+  color: black;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: bold;
+}
+
+#error {
+  color: #ff4d4d;
+}
