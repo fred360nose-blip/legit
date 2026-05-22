@@ -22,7 +22,7 @@ buttons.forEach(button => {
     if (pin.length === 6) {
       setTimeout(() => {
         if (pin === correctPin) {
-          window.location.href = "licence.html";
+          window.location.href = "home.html";
         } else {
           alert("Wrong PIN");
           pin = "";
