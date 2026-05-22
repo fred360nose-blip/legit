@@ -2,19 +2,38 @@
 <html>
 <head>
   <title>Enter PIN</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="pin.css">
 </head>
 <body>
-  <main class="screen">
-    <h1>Enter PIN</h1>
-    <p class="warning">DEMO ONLY - NOT VALID ID</p>
+  <main class="pin-page">
+    <section class="top-section">
+      <div class="lock">🔒</div>
 
-    <input id="pin" type="password" placeholder="PIN">
-    <button onclick="checkPin()">Continue</button>
-    <p id="error"></p>
+      <h1>Enter your 6 digit PIN</h1>
+
+      <div class="pin-boxes">
+        <div></div><div></div><div></div><div></div><div></div><div></div>
+      </div>
+
+      <p class="reset-text">Forgot your PIN? <span>RESET</span></p>
+    </section>
+
+    <section class="keypad">
+      <button>1</button>
+      <button>2</button>
+      <button>3</button>
+      <button>4</button>
+      <button>5</button>
+      <button>6</button>
+      <button>7</button>
+      <button>8</button>
+      <button>9</button>
+      <button class="blank"></button>
+      <button>0</button>
+      <button id="delete">⌫</button>
+    </section>
   </main>
 
-  <script src="data.js"></script>
-  <script src="app.js"></script>
+  <script src="pin.js"></script>
 </body>
 </html>
