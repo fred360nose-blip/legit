@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Demo Licence</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="phone">
+    <div class="card">
+      <div class="watermark">DEMO ONLY</div>
+
+      <h2>Sample Digital Licence</h2>
+      <p class="notvalid">NOT VALID ID</p>
+
+      <div class="photo">PHOTO</div>
+
+      <h1 id="name"></h1>
+      <p><b>DOB:</b> <span id="dob"></span></p>
+      <p><b>Address:</b> <span id="address"></span></p>
+      <p><b>Licence No:</b> <span id="licence"></span></p>
+      <p><b>Class:</b> <span id="class"></span></p>
+
+      <div class="qr">SAMPLE QR</div>
+    </div>
+
+    <button onclick="logout()">Logout</button>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+  <script>
+    loadLicence();
+  </script>
+</body>
+</html>
